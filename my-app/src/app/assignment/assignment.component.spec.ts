@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {AssignmentMsgokComponent} from './assignment-msgok.component';
+import {AssignmentComponent} from './assignment.component';
 
-describe('AssignmentMsgokComponent', () => {
-  let component: AssignmentMsgokComponent;
-  let fixture: ComponentFixture<AssignmentMsgokComponent>;
+describe('AssignmentComponent', () => {
+  let component: AssignmentComponent;
+  let fixture: ComponentFixture<AssignmentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AssignmentMsgokComponent]
+      declarations: [AssignmentComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AssignmentMsgokComponent);
+    fixture = TestBed.createComponent(AssignmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

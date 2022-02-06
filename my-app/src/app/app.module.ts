@@ -6,8 +6,8 @@ import {AppComponent} from './app.component';
 import {PageHeaderComponent} from './page-header/page-header.component';
 import {PageMenuComponent} from './page-menu/page-menu.component';
 import {ApplistComponent} from './applist/applist.component';
-import {AssignmentMsgokComponent} from './assignment-msgok/assignment-msgok.component';
-import {AssignmentMsgfailComponent} from './assignment-msgfail/assignment-msgfail.component';
+import {AssignmentComponent} from './assignment/assignment.component';
+import {AssAlertComponent} from './ass-alert/ass-alert.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import {AssignmentMsgfailComponent} from './assignment-msgfail/assignment-msgfai
     PageHeaderComponent,
     PageMenuComponent,
     ApplistComponent,
-    AssignmentMsgokComponent,
-    AssignmentMsgfailComponent
+    AssignmentComponent,
+    AssAlertComponent
   ],
   imports: [
     BrowserModule,

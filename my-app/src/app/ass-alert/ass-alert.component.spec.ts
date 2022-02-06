@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {AssignmentMsgfailComponent} from './assignment-msgfail.component';
+import {AssAlertComponent} from './ass-alert.component';
 
-describe('AssignmentMsgfailComponent', () => {
-  let component: AssignmentMsgfailComponent;
-  let fixture: ComponentFixture<AssignmentMsgfailComponent>;
+describe('AssMsgboxComponent', () => {
+  let component: AssAlertComponent;
+  let fixture: ComponentFixture<AssAlertComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AssignmentMsgfailComponent]
+      declarations: [AssAlertComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AssignmentMsgfailComponent);
+    fixture = TestBed.createComponent(AssAlertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
