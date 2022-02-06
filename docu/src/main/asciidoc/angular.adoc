@@ -67,6 +67,16 @@ export class AppComponent {
   title = 'first-app';
 }
 
+Benötigt FormsModule als Import : ( manuell, kommt nicht von Intelllij ) .app.module.ts
+
+[source]
+import {FormsModule} from "@angular/forms";
+...
+imports: [
+    ....
+    FormsModule
+]
+
 ==== Workarounds
 
 ===== ( during TEST ) "Can't bind to 'ngModel' since it isn't a known property of 'input'"

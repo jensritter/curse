@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from "@angular/forms";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -8,6 +9,7 @@ import {PageMenuComponent} from './page-menu/page-menu.component';
 import {ApplistComponent} from './applist/applist.component';
 import {AssignmentComponent} from './assignment/assignment.component';
 import {AssAlertComponent} from './ass-alert/ass-alert.component';
+import {AssBindingComponent} from './ass-binding/ass-binding.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import {AssAlertComponent} from './ass-alert/ass-alert.component';
     PageMenuComponent,
     ApplistComponent,
     AssignmentComponent,
-    AssAlertComponent
+    AssAlertComponent,
+    AssBindingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
