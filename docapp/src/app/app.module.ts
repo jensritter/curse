@@ -15,6 +15,18 @@ import {MatCardModule} from "@angular/material/card";
 import {MatListModule} from "@angular/material/list";
 import {EmptyPageComponent} from './empty-page/empty-page.component';
 import {LinkComponent} from './link/link.component';
+import {DatabindingComponent} from './basic/databinding/databinding.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {FormsModule} from "@angular/forms";
+import {StructureComponent} from './basic/structure/structure.component';
+import {DirectivesComponent} from './basic/directives/directives.component';
+import {NgforComponent} from './basic/directives/ngfor/ngfor.component';
+import {NgifComponent} from './basic/directives/ngif/ngif.component';
+import {NgclassComponent} from './basic/directives/ngclass/ngclass.component';
+import {NgstyleComponent} from './basic/directives/ngstyle/ngstyle.component';
+import {NgswitchComponent} from './basic/directives/ngswitch/ngswitch.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {CustomComponent} from './basic/directives/custom/custom.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +34,15 @@ import {LinkComponent} from './link/link.component';
     CliComponent,
     EmptyPageComponent,
     LinkComponent,
+    DatabindingComponent,
+    StructureComponent,
+    DirectivesComponent,
+    NgforComponent,
+    NgifComponent,
+    NgclassComponent,
+    NgstyleComponent,
+    NgswitchComponent,
+    CustomComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +55,10 @@ import {LinkComponent} from './link/link.component';
     MatDividerModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatTooltipModule,
+    FormsModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

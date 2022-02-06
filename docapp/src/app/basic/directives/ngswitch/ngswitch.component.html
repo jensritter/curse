@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>
+    ngSwitch
+  </mat-card-title>
+  <mat-card-content>
+    <p>
+      <app-link>https://angular.io/api/common/NgSwitch</app-link>
+      <br />
+    </p>
+    Switch-case für templates ... hm. ...
+    <app-link>https://angular.io/guide/built-in-directives#switching-cases-with-ngswitch</app-link>
+  </mat-card-content>
+</mat-card>
+<div>
+  <form>
+    <label class="mat-form-field-label" #inputField>Field</label>
+    <input class="mat-form-field mat-input-element" (change)="onChange($event)" (keyup)="onChange($event)" (keydown)="onChange($event)" matTooltip="mit funktion 0,1,5">
+  </form>
+</div>
+<div [ngSwitch]="numField">
+  <div *ngSwitchCase="0">0</div>
+  <div *ngSwitchCase="1">1</div>
+  <div *ngSwitchCase="5">5</div>
+  <div *ngSwitchDefault>Sonstiges</div>
+</div>

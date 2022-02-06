@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-title>Struktur and Files</mat-card-title>
+
+  <mat-card-content>
+
+    <mat-card>
+      <mat-card-title>Project-Files</mat-card-title>
+      <mat-card-content>
+
+        <mat-card>
+          <mat-card-title>angular.json</mat-card-title>
+          <mat-card-content>Detailierte config für ng -- ist die Basis für alles.</mat-card-content>
+
+        </mat-card>
+
+
+        <mat-card>
+          <mat-card-title>package.json</mat-card-title>
+          <mat-card-content>
+            npm-projekt-file mit "Definition"/Filter der Dependencies und Basic-Tasks
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-title>package-lock.json</mat-card-title>
+          <mat-card-content>
+            <p> Nach einem lauf von <code>npm install</code> werden in dieser Datei alle gefundenen Abhängigkeiten incl. Download-Pfad gespeichert.</p>
+            <p>Diese Datei kann "kaputt" gehen :/ -- siehe auch das Verzeichnis "node_modules". </p>
+            <p>Löschen der Datei / des Verzeichnisses "node_modules" ist ein häufiger Bugfix, wenn man zwischen Versionen springt.</p>
+          </mat-card-content>
+        </mat-card>
+
+      </mat-card-content>
+    </mat-card>
+
+
+    <mat-card>
+      <mat-card-title>Wichtige Source-Files</mat-card-title>
+      <mat-card-content>
+        <mat-card>
+          <mat-card-title>src/app/app.module.ts</mat-card-title>
+          <mat-card-content>
+            Große "Include"-Datei.
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-title>src/index.html</mat-card-title>
+          <mat-card-content>
+            <p>Vorlage(!) für die index.html-Datei für <code>ng build</code>.</p>
+            <p>Speziell <code>base href="/"</code> kann z.B. durch Parameter beim build verändert werden <code>ng build --base-href=XXX</code></p>
+            <div>
+              Speziell <code>--base-href=//angular</code> ist ein workaround für einen Git-Bash-Bug unter Windows, sonst kommt da müll raus.
+              ( und //angular muss nach <code>ng build</code> manuell zu /angular korrigiert werden )
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+
+  </mat-card-content>
+
+</mat-card>

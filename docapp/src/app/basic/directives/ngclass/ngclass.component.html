@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title> ngClass</mat-card-title>
+  <mat-card-content>
+    <p>
+      <app-link>https://angular.io/api/common/NgClass</app-link>
+    </p>
+    <p>Damit man zusätzliche Klassen anhand einer Funktion setzten kann. ( siehe auch <a style="cursor:pointer" routerLink="../ngstyle"> ngStyle</a> )</p>
+    <div>
+      <h3>Version1</h3>
+      <pre>element [ngClass]="expression"</pre>
+    </div>
+    <div>
+      <h3>Version2</h3>
+      <pre>element [ngClass]="&lbrace;class1: booleanExpression(), class2: booleanExpression()}"</pre>
+      Set class conditionaly on specific booleanExpression()
+    </div>
+  </mat-card-content>
+</mat-card>
+<div>
+  <div [ngClass]="klasse">testklasse</div>
+</div>

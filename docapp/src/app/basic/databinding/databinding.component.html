@@ -1,0 +1,73 @@
+<mat-card>
+  <mat-card-title>
+    Databinding - Overview
+  </mat-card-title>
+  <mat-card-content>
+    <table class="mat-table" width="100%">
+      <thead>
+      <tr class="mat-header-cell" style="text-align: left;">
+        <th>Was</th>
+        <th>Wie</th>
+        <th>Bemerkung</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>String interpolation</td>
+        <td>{{stringinterpolation}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Property Binding</td>
+        <td>[property] = "expression"</td>
+        <td>
+          <app-link>https://angular.io/guide/property-binding</app-link>
+        </td>
+      </tr>
+      <tr>
+        <td>Event Binding</td>
+        <td>(event)="method()"</td>
+        <td>
+          <app-link>https://angular.io/guide/event-binding</app-link>
+        </td>
+      </tr>
+      <tr>
+        <td>Two-Way-Binding</td>
+        <td>[(ngModel)]="property"</td>
+        <td>only during form-handling?</td>
+      </tr>
+      <tr>
+        <td>others</td>
+        <td></td>
+        <td>
+          <app-link>https://angular.io/guide/attribute-binding#injecting-attribute-values</app-link>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Special-Template-Variables für Event-Binding : $event</mat-card-title>
+  <mat-card-content>
+    <p>
+      $event kann als Parameter übergeben werden, um die Event-Details zu bekommen:
+    </p>
+    <pre>(click)="onClick($event)"</pre>
+    <button mat-raised-button (click)="onClick($event)" matTooltip="See console.log" matTooltipPosition="right">Click Me For Event-Details</button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Forms</mat-card-title>
+  <mat-card-content>
+    <p>Benötigt das Module: "FormsModule" aus "@angular/forms" in app.module.ts</p>
+    <p>See code for details ....</p>
+    <form>
+      <label class="mat-form-field-label">Textinput </label>
+      <input type="text" [(ngModel)]="formField" name="fieldName" class="mat-input-element mat-form-field">
+      <p>Content : {{formField}}</p>
+    </form>
+  </mat-card-content>
+</mat-card>

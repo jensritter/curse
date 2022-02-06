@@ -1,5 +1,4 @@
 <mat-toolbar class="mat-elevation-z8">
-
   <button mat-button class="menu-button" (click)="menuopen=!menuopen">
     <mat-icon>menu</mat-icon>
   </button>
@@ -7,19 +6,31 @@
   <mat-divider></mat-divider>
 </mat-toolbar>
 
-<mat-sidenav-container>
+<mat-sidenav-container class="container-fluid" style="height:91%;">
 
-  <mat-sidenav [opened]="menuopen" mode="side">
-      <h1>Menu</h1>
+  <mat-sidenav [opened]="menuopen" mode="side" class="col-md-2" style="height: 100%;">
+    <div>
+      <div style="padding: 8px;">
+        <h2>Basic</h2>
+        <div>
+          <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
+        </div>
+        <div>
+          <button mat-button routerLink="basic/structure" routerLinkActive="mat-raised-button mat-accent">Struktur</button>
+        </div>
+        <div>
+          <button mat-button routerLink="basic/databinding" routerLinkActive="mat-raised-button mat-accent">DataBinding</button>
+        </div>
+        <div>
+          <button mat-button routerLink="basic/directives" routerLinkActive="mat-raised-button mat-accent">Directives</button>
+        </div>
 
-      <ul style="list-style: none; padding:0;">
-          <li><H2>Basics</H2>
-              <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
-          </li>
-      </ul>
+      </div>
+    </div>
+
   </mat-sidenav>
 
-  <mat-sidenav-content class="content mat-elevation-z8">
+  <mat-sidenav-content class="content mat-elevation-z8" [ngClass]="this.menuopen ? 'col-md-10':'col-md-12'">
     <!--    <div class="content mat-elevation-z8">-->
     <router-outlet></router-outlet>
     <!--    </div>-->
