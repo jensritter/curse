@@ -1,6 +1,7 @@
 import {EventEmitter, Injectable} from "@angular/core";
 import {Recipie} from "./recipe";
 import {Ingredient} from "../ingredient";
+import {ShoppingListService} from "../shopping-list/shopping-list.service";
 
 @Injectable()
 export class RecipeService {
@@ -9,10 +10,13 @@ export class RecipeService {
 
   recipieSelected = new EventEmitter<Recipie>();
 
+  constructor(private shoppingService: ShoppingListService) {
+  }
+
   private recipies: Recipie[] = [
     new Recipie("Tasty Schnitzel",
       "Tasty Schnitzel",
-      "https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG", [
+      "/assets/schnitzel.jfif", [
         new Ingredient("Meat", 1),
         new Ingredient("French Fries", 20),
       ]
@@ -20,7 +24,7 @@ export class RecipeService {
     new Recipie(
       "Big Fat Burger",
       "What else you need to say?",
-      "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg", [
+      "/assets/burger.jpg", [
         new Ingredient("Buns", 2),
         new Ingredient("Meat", 1),
       ])
@@ -30,5 +34,8 @@ export class RecipeService {
     return this.recipies.slice();
   }
 
+  addToShoppingList(recipie: Recipie) {
+    this.shoppingService.ingredientAddAll(recipie.ingredients);
+  }
 
 }

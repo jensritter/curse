@@ -18,10 +18,13 @@ export class ShoppingListService {
   ingredientAdd(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.changedEvents.emit(this.getIngredients());
+    console.log("Added to ShoppingList: ", ingredient);
   }
 
-  ingredientRemove(ingredient: Ingredient) {
-    this.ingredients = this.ingredients.filter(it => it != ingredient);
+  ingredientAddAll(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
     this.changedEvents.emit(this.getIngredients());
+    console.log("Added to ShoppingList: ", ingredients);
   }
+
 }
