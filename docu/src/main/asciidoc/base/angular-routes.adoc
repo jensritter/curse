@@ -1,0 +1,236 @@
+== Routes
+
+Verwaltet einen Platz, an dem eine der hinterlegten Componenten angezeigt werden soll.
+
+=== Init
+
+.Routes in app.modules.ts
+[source]
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([
+      {path: "", component: HomeComponent},
+      {path: "users", component: UsersComponent},
+      {path: "users/:id/:name", component: UserComponent},
+      {path: "servers", component: ServersComponent}
+      {path: "servers/:id/edit", component: EditServerComponent}
+    ]])
+  ],
+  ...
+})
+
+=== Platzhalter definieren
+
+.html
+[source]
+<router-outlet></router-outlet>
+
+=== Decorator für Links :
+
+.html
+[source]
+<a routerLink="/" [routerLinkOptions]="{exact:true}">Home</a>
+<a [routerLink]="'/users'">Users</a>
+<a [routerLink]="['/servers']">Servers</a>
+<a [routerLink]="['/servers',5,'edit']"
+        [queryParams]="{allowEdit:'1'}"
+        [fragment]="'loading'">
+    go to /servers/5/edit?allowEdit=1#loading
+</a>
+
+=== Programmatically nagivation
+
+.ts -- RELATIVE
+[source]
+constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+go() {
+    router.navigate([$currentUserName], {relativeTo: activatedRoute});
+}
+
+für Absolute pfade den 2. Parameter von "#navigate" nicht setzten.
+
+=== Fetching Path-Parameters
+
+[source]
+constructor(private activatedRoute: ActivatedRoute) {}
+ngOnInit() {
+    this.subscription = this.activeRouter.params.subscribe(params => {
+      console.log(params["id"]);
+      console.log(params["name"]);
+    });
+}
+ngOnDestroy() { // für activeRouter-subscriptions macht dies angular autoamtisch
+    this.subscription.unsubscribe();
+}
+
+=== Child-Routing
+
+.app.module.ts
+[source]
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([
+      {path: "", component: HomeComponent},
+      {path: "users", component: UsersComponent, children: [
+          {path: ":id/:name", component: UserComponent},
+      ]},
+
+      {path: "servers", component: ServersComponent, children: [
+           {path: ":id/edit", component: EditServerComponent}
+           {path: ":id", component: ServersComponet}
+      ]}
+
+    ]])
+  ],
+  ...
+})
+
+Bei children muss dann <router-outlet> im Parent-Html hinterlegt sein, damit dort dann das Child gerendert werden kann.
+
+==== QueryParams- ans ChildRouters weitergeben :
+
+scheint nur programmatisch mit der extra option "queryParamsHandling" zu gehen.
+
+es gibt noch "preserve" -- ... frage ist wofpr ?
+
+.ts
+[source]
+this.router.navigate(["edit"], {relativeTo:this.activatedRoute, queryParamsHandling:"merge"});
+
+==== More Routes
+
+!!
+Die Routen werden in der reihenfolge beachtet, wie sie hinterlegt sind. -- Wildcards also immer als letztes.
+
+===== wildcards
+
+[source]
+{path: "**", component: NotFoundComponent}
+
+===== Redirects
+
+[source]
+{path: "**", redirectTo:'/not-found'}
+{path: "oldLinkExist", redirectTo:'/newLink'}
+
+===== complete-Path
+
+speziell für einen default-redirect sinnvoll, da "path:''" für alle hinterlegten Routen greift.
+
+[source]
+{path: "", redirectTo: '/index', pathMatch: 'full'}
+
+=== Auslagerung der Routen in ein eigenes ngModule :
+
+.app-routes.module.ts
+[source]
+const appRoutes: Routes = [
+  {path: "", component: HomeComponent},
+  {
+    path: "users", component: UsersComponent, children: [
+      {path: ":id/:name", component: UserComponent},
+    ]
+  },
+  {
+    path: "servers", component: ServersComponent, children: [
+      {path: ":id", component: ServerComponent},
+      {path: ":id/edit", component: EditServerComponent},
+    ]
+  },
+  {path: "not-found", component: PageNotFoundComponent},
+  {path: "**", redirectTo: '/not-found'}
+];
+@NgModule({
+    imports: [
+        RouterModule.forRoot(appRoutes)
+    ], exports: [
+        RouterModule
+    ]
+})
+export class AppRoutingModule {}
+
+.app.module.ts
+[source]
+...
+imports: [
+...
+AppRoutingModule
+...
+
+=== Route-Interceptors  CanActive, CanActivateChild, CanDeactivate
+
+.app-routes.module.ts
+[source]
+path: "servers", canActivateChild: [AuthGuardService], component: ServersComponent, children: [
+...
+]
+
+( Return-Type ist : Observable<T>,Promise<T>, T) .AuthGuardService
+
+[source]
+interface sub {
+    isOkToLeave : () => boolean;
+}
+class AuthGuardService implements CanDeactivate<sub> {
+
+}
+
+=== Route-Interfectors Data
+
+==== static
+
+.app-routes.module.ts
+[source]
+{path: 'servers', data: [custom: 'helloWorld'] }
+
+.component
+[source]
+export class MyComponent implements OnInit {
+    constructor(private activatedRoute: ActivatedRoute) {}
+    ngOnInit() {
+        console.log(this.activatedRoute.data["custom"]);
+    }
+}
+
+==== Dynamic
+
+.app-routes.module.ts
+[source]
+{path: 'servers', resolve: { custom: MyInterceptor}}
+
+( Return-Type ist : Observable<T>,Promise<T>, T) .interceptor
+
+[source]
+export class MyInterceptor implements Resolve<string> {
+    resolve(route:ActivatedRouteSnapshot, state:RouterStateSnapshot) : string {
+        return "hello";
+    }
+}
+
+.component
+[source]
+export class MyComponent implements OnInit {
+    constructor(private activatedRoute: ActivatedRoute) {}
+    ngOnInit() {
+        console.log(this.activatedRoute.data["custom"]);
+    }
+}
+
+=== Hashmode-Routing
+
+Damit wird vom Server immer nur '/' angefordert, und der Pfad wird an .js weitergereicht ... notwendige möglichkeit für boot ?
+
+[source]
+@NgModule({
+    imports: [
+        RouterModule.forRoot(appRoutes, { useHash:true})
+        ], exports: [
+            RouterModule
+        ]
+    })
