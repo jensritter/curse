@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Recipie} from "../recipe";
 
 @Component({
@@ -8,8 +8,12 @@ import {Recipie} from "../recipe";
 })
 export class RecipeListComponent implements OnInit {
 
+  @Output()
+  recipieListener = new EventEmitter<Recipie>();
+
   recipies: Recipie[] = [
-    new Recipie("Default", "Default Recipie", "https://www.taste-and-more.ch/media/image/5b/10/66/Mie-Noodels-Asiatisch-by-taste-and-more-ch_600x600.jpg")
+    new Recipie("Default", "Default Recipie", "https://www.taste-and-more.ch/media/image/5b/10/66/Mie-Noodels-Asiatisch-by-taste-and-more-ch_600x600.jpg"),
+    new Recipie("Default2", "Default Recipie2", "https://www.taste-and-more.ch/media/image/5b/10/66/Mie-Noodels-Asiatisch-by-taste-and-more-ch_600x600.jpg")
   ];
 
   constructor() {
@@ -18,4 +22,7 @@ export class RecipeListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClickRecipie(row: Recipie) {
+    this.recipieListener.emit(row);
+  }
 }

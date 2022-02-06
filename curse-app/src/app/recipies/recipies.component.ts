@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Recipie} from "./recipe";
 
 @Component({
   selector: 'app-recipies',
@@ -6,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./recipies.component.scss']
 })
 export class RecipiesComponent implements OnInit {
+  currentRecipie: Recipie = new Recipie("", "", "");
 
   constructor() {
   }
@@ -13,4 +15,7 @@ export class RecipiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onRecipieClick(event: Recipie) {
+    this.currentRecipie = event;
+  }
 }
