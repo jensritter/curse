@@ -17,5 +17,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addRedirectViewController("/", "/angular/index.html");
+        registry.addRedirectViewController("/angular", "/angular/index.html");
+        registry.addRedirectViewController("/angular/", "/angular/index.html");
     }
 }
