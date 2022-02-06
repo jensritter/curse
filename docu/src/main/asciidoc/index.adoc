@@ -3,10 +3,31 @@ von Jens Ritter <jens.ritter@gmail.com>
 {project-name} {project-version} {docdatetime}
 :iconfont-remote!:
 :xrefstyle: short // Wie sollen verweise  angezeigt werden ?
+
 Angular Dokumentation {project-version}
 
+https://powerman.name/doc/asciidoc
+https://docs.asciidoctor.org/asciidoc/latest/blocks/
+
+http://localhost:4200/
+
+== Angular Basic
+
+=== CLI
+
+| ng serve |
+
+.Table
+|===
+|Command|Descrption
+
+|ng serve | Build and run DevServer
+|ng new | erstellt neues angular-project : use "-t -s" for inline "-g" for skip-git
+
+|===
 
 == Angular
+
 === Model
 
 Bindet ein Form-Element zu einier Component - Property
