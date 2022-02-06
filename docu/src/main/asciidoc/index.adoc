@@ -12,10 +12,14 @@ https://docs.asciidoctor.org/asciidoc/latest/blocks/
 http://localhost:4200/
 
 :toc:
+include::base/angular.adoc[]
+include::base/angular-lifecircle.adoc[]
 
+include::databinding/angular-events.adoc[]
+include::databinding/angular-localreference.adoc[]
+include::databinding/angular-ng-content.adoc[]
 
-include::angular.adoc[]
-
-include::typescript.adoc[]
-
-include::bootstrap.adoc[]
+include::misc/material.adoc[]
+include::misc/angular-http.adoc[]
+include::misc/bootstrap.adoc[]
+include::misc/typescript.adoc[]
