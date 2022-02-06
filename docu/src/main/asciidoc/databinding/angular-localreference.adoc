@@ -1,0 +1,27 @@
+== locale references in HTML-Templates
+
+.html
+[source]
+<p #custom1><input #custom2></input> </p>
+<button (click)="doAdd(custom2.value)"></botton>
+
+via # können allen html-elementen eine referenz gegeben werden, die dann (nur im template) in anderen sachen weiterverwendet werden kann.
+
+ist gefühlt wie ein automatisches "getElementById()"
+
+=== viewchild()
+
+wenn man eine lokale referenz im html-element erstellt kann, mann das das Html-Element über @ViewChild() in die componente einfügen, und verwenden
+-> es sollten dabei keine änderungen gemacht werden, und es fühlt sich irgendwie auch falsch an.
+
+.html
+[source]
+<input type='text' #test></a>
+
+.ts
+[source]
+@ViewChild("test") test : ElementRef;
+test() {
+    let value = test.nativeElement.value
+}
+

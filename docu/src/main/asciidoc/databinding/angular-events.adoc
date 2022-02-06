@@ -1,0 +1,36 @@
+== Custom Events
+
+=== INPUT
+
+Damit eine Componente attribute haben kann :
+
+.ts
+[source]
+@Input("Optionaler AliasName als String")
+customField : string
+
+.html
+[source]
+<custom-component [customField] = "customValue"></custom-component>
+
+=== Output
+
+Eine Sub-Componente kann Events zur Parent-Componente sende :
+
+.ts
+[source]
+@Output()
+customProperty = new EventEmitter<CustomEventType>();
+void trigger() {
+    customProperty.emit(new CustomEventType());
+}
+
+.PARENT-html
+[source]
+<custom-component (customProperty)="onEvent($event)"></custom-component>
+
+.PARENT-ts
+[source]
+onEvent(event:CustomEventType) {
+    console.log(event);
+}

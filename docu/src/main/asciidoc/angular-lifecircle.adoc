@@ -1,0 +1,4 @@
+== Lifecircle
+
+https://v2.angular.io/docs/ts/latest/guide/lifecycle-hooks.html
+

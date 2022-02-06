@@ -1,0 +1,15 @@
+=== Template-Components mit ng-content
+
+Wenn die Komponente "<ng-content>" im eigenen Html-Template verwendet, wird hier der content eingefügt, der im Parent zwischen den child-tags geschrieben wurde eingefügt.
+
+.html PARENT
+[source]
+<child><h1>Welcome</h1></child>
+
+.html CHILD
+[source]
+<div>
+    <ng-content></ng-content>
+</div>
+
+
