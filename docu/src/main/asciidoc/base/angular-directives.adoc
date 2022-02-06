@@ -17,6 +17,7 @@ selector: '[appBetterHightlight]'
 export class BetterHightlightDirective implements OnInit {
   @HostBinding("style.backgroundColor")
   backgroundColor: string = "transparent";
+  @HostBinding("class.open") isOpen = false; // set/remote class 'open' for element !!!! ( nicht classList, o.ä. )
   @Input()
   defaultColor: string = "transparent";
   @Input("appBetterHightlight") // default Propertry
