@@ -1,5 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Recipie} from "../recipe";
+import {RecipeService} from "../recipe.service";
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,21 +9,13 @@ import {Recipie} from "../recipe";
 })
 export class RecipeListComponent implements OnInit {
 
-  @Output()
-  recipieListener = new EventEmitter<Recipie>();
-
-  recipies: Recipie[] = [
-    new Recipie("Default", "Default Recipie", "https://www.taste-and-more.ch/media/image/5b/10/66/Mie-Noodels-Asiatisch-by-taste-and-more-ch_600x600.jpg"),
-    new Recipie("Default2", "Default Recipie2", "https://www.taste-and-more.ch/media/image/5b/10/66/Mie-Noodels-Asiatisch-by-taste-and-more-ch_600x600.jpg")
-  ];
-
-  constructor() {
+  constructor(private recipieService: RecipeService) {
   }
+
+  recipies: Recipie[] = [];
 
   ngOnInit(): void {
+    this.recipies = this.recipieService.getRecipies();
   }
 
-  onClickRecipie(row: Recipie) {
-    this.recipieListener.emit(row);
-  }
 }
