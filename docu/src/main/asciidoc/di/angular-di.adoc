@@ -1,0 +1,43 @@
+== Dependency-Injection
+
+Alle Klassen können als Bean im Angular-Context registiert werden, und dann via Constructor-Injection verwendet werden.
+
+Angular verwendet aber Hirachical Injection : elemente die Providen, vererben an Kinder-Elemente.
+
+.Verwendung
+[source]
+@Injectable({providedIn: 'root'})
+class jens {
+    constructor(private custom: CustomClass) {
+    }
+}
+
+Die notwendige Registrierung kann global in "app.module.ts" im "providers: []" array erfolgen
+-- oder pro Klasse als Annotation-Property "providers", die dann and die Child-Elements vererbt wird.
+So eine Child-Vererbung würde eine Globale überschreiben.
+NEU:
+Damit LazyLoading unterstützt wird, sollte man "@Injectable({providedIn: 'root'})" statt einer globalen registrierung verwenden.
+
+Sofern bei einer Componente also ein "providers" definiert ist, werden diese in einen Child-AppContext gelegt.
+
+Nur der ClassName dient hier als key für die Auflösung.
+
+.app.module.ts
+[source]
+@NgModule({
+...
+    providers: [ CustomClass],
+...
+})
+
+.per Component
+[source]
+@Component({
+  selector: 'app-new-account',
+  templateUrl: './new-account.component.html',
+  styleUrls: ['./new-account.component.css'],
+  providers: [CustomClass]
+})
+export class NewAccountComponent {
+  constructor(private custom: CustomClass) { }
+}
