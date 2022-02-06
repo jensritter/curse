@@ -1,8 +1,10 @@
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {Ingredient} from "../ingredient";
 
 @Injectable({providedIn: 'root'})
 export class ShoppingListService {
+
+  changedEvents = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient("Steel", 5),
@@ -15,9 +17,11 @@ export class ShoppingListService {
 
   ingredientAdd(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.changedEvents.emit(this.getIngredients());
   }
 
   ingredientRemove(ingredient: Ingredient) {
-    this.ingredients = this.ingredients.filter(it => it != ingredient)
+    this.ingredients = this.ingredients.filter(it => it != ingredient);
+    this.changedEvents.emit(this.getIngredients());
   }
 }
