@@ -1,19 +1,17 @@
 == Bootstrap
 
-Bootstrap3 für TS/Angular :
+Bootstrap für TS/Angular :
 
 === Bootstrap5:
 
-    npm install "@types/bootstrap"
-    npm install "bootstrap"
+    npm install bootstrap @types/bootstrap
 
 .src/style.scss:
     @import "node_modules/bootstrap/scss/bootstrap";
 
 === Bootstrap3:
 
-    npm install bootstrap-sass
-    npm install bootstrap@3
+    npm install bootstrap@3 bootstrap-sass
 
 .src/style.scss:
-    @import "bootstrap"
+    @import "bootstrap";
