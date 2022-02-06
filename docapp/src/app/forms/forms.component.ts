@@ -29,11 +29,11 @@ export class FormsComponent implements OnInit {
     console.log(form.value);
     switch (form.value.selection) {
       case "template":
-        this.router.navigate(["templates"], {relativeTo: this.activatedRoute});
-        console.log("selected template")
+      case "patch":
+        this.router.navigate(["forms", form.value.selection]);
         break;
       case "other":
-        console.log("selected other")
+        console.log("unimplemented : selected other")
         break;
       default:
         alert("Unknown selection");

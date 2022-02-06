@@ -1,8 +1,38 @@
 <mat-card>
   <mat-card-title>Template-Based</mat-card-title>
   <mat-card-content>
+    Man kann im Template die Input-Felder gruppieren, in dem beliebige HTML-Elemente mit "ngModelGroup" und einem Namen austatttet.
 
-    siehe globale Vorraussetzungen
-
+    Zugriff auf diese Gruppen kann man dann
   </mat-card-content>
 </mat-card>
+
+<div style="margin-top: 10px;"></div>
+
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+  <div ngModelGroup="user" #userModel="ngModelGroup">
+    <div *ngIf="userModel.invalid && userModel.touched">Invalid User-Group</div>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput name="surname" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Vorname</mat-label>
+      <input matInput name="name" ngModel>
+    </mat-form-field>
+  </div>
+  <div ngModelGroup="details">
+    <mat-form-field>
+      <mat-label>Straße</mat-label>
+      <input matInput name="street" ngModel>
+    </mat-form-field>
+  </div>
+  <button mat-button color="primary" [disabled]="form.invalid" type="submit">Submit</button>
+</form>
+
+<div *ngIf="user">
+  <div>user: {{user.name}} vorname: {{user.vorname}}</div>
+  <div>strasse: {{user.strasse}}</div>
+</div>

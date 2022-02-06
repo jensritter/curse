@@ -6,7 +6,7 @@
 
   Angular-Documentation
   <div style="display:flex; flex: 1 1 auto;"></div>
-  <a href="https://github.com/jensritter/curse/tree/master/docapp" target="_blank" matTooltip="See Sourcecode">
+  <a href="https://github.com/jensritter/curse/tree/master/docapp/src/app" target="_blank" matTooltip="See Sourcecode">
     <img src="assets/GitHub-Mark-32px.png" alt="Github">
   </a>
 </mat-toolbar>
@@ -16,25 +16,28 @@
   <mat-sidenav [opened]="menuopen" mode="side" class="col-md-2" style="height: 100%;">
     <div>
       <div style="padding: 8px;">
-        <div>
-          <h2 routerLinkActive="actvive-sub">Basic</h2>
-          <div>
-            <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
-          </div>
-          <div>
-            <button mat-button routerLink="basic/structure" routerLinkActive="mat-raised-button mat-accent">Struktur</button>
-          </div>
-          <div>
-            <button mat-button routerLink="basic/databinding" routerLinkActive="mat-raised-button mat-accent">DataBinding</button>
-          </div>
-          <div>
-            <button mat-button routerLink="basic/directives" routerLinkActive="mat-raised-button mat-accent">Directives</button>
-          </div>
 
+        <div class="menu-container">
+          <h2 routerLinkActive="actvive-sub">Basic</h2>
+
+          <div class="menu-content">
+            <div>
+              <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
+            </div>
+            <div>
+              <button mat-button routerLink="basic/structure" routerLinkActive="mat-raised-button mat-accent">Struktur</button>
+            </div>
+            <div>
+              <button mat-button routerLink="basic/databinding" routerLinkActive="mat-raised-button mat-accent">DataBinding</button>
+            </div>
+            <div>
+              <button mat-button routerLink="basic/directives" routerLinkActive="mat-raised-button mat-accent">Directives</button>
+            </div>
+          </div>
         </div>
 
-        <div style="margin-top: 10px;">
-          <!--          <h2 style="border: 1px solid green;">Forms          </h2>-->
+        <div class="menu-content">
+          <h2>Forms</h2>
           <div>
             <button mat-button routerLink="forms" routerLinkActive="mat-raised-button mat-accent">Forms</button>
           </div>

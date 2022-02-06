@@ -13,6 +13,7 @@ import {NgswitchComponent} from "./basic/directives/ngswitch/ngswitch.component"
 import {CustomComponent} from "./basic/directives/custom/custom.component";
 import {FormsComponent} from "./forms/forms.component";
 import {TemplatesComponent} from "./forms/templates/templates.component";
+import {PatchComponent} from "./forms/patch/patch.component";
 
 const routes: Routes = [
   {path: "", component: EmptyPageComponent, pathMatch: "full"},
@@ -31,7 +32,8 @@ const routes: Routes = [
   },
   {
     path: "forms", component: FormsComponent, children: [
-      {path: "templates", component: TemplatesComponent},
+      {path: "template", component: TemplatesComponent},
+      {path: "patch", component: PatchComponent},
       {path: "other", component: EmptyPageComponent}
     ]
   }

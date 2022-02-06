@@ -2,14 +2,13 @@
   <mat-card-title>Forms</mat-card-title>
   <mat-card-content>
     <h3>Vorraussetungen : </h3>
-    <ul>
-      <li>FormsModel in app.module.ts</li>
-      <li>&lt;form&gt;-Tags im Templates</li>
-      <li>&lt;input&gt;-Tags mit befülltem "name" attribute</li>
-      <li>ngModel als Attribute für &lt;input&gt;/&lt;select&gt;-Element</li>
-      <li>Event (ngSubmit) auf &lt;form&gt; verwenden, um Submit abzufangen.</li>
-      ( Es darf weiterhin ein "button type=submit" geben. )
-    </ul>
+    <mat-list>
+      <mat-list-item>FormsModel in app.module.ts</mat-list-item>
+      <mat-list-item>&lt;form&gt;-Tags im Templates</mat-list-item>
+      <mat-list-item>&lt;input&gt;-Tags mit befülltem "name" attribute</mat-list-item>
+      <mat-list-item>ngModel als Attribute für &lt;input&gt;/&lt;select&gt;-Element</mat-list-item>
+      <mat-list-item>Event (ngSubmit) auf &lt;form&gt; verwenden, um Submit abzufangen.</mat-list-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -20,6 +19,7 @@
         <div>
           <mat-radio-group aria-label="Select an option" name="selection" [ngModel]="selected" required>
             <mat-radio-button value="template" style="padding-right: 20px;">Template</mat-radio-button>
+            <mat-radio-button value="patch" style="padding-right: 20px;">Patch Model-Data</mat-radio-button>
             <mat-radio-button value="other" style="padding-right: 20px;">Option 2</mat-radio-button>
           </mat-radio-group>
           <button mat-raised-button type="submit" color="primary" [disabled]="forms.invalid">Open Page</button>

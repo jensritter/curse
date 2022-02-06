@@ -30,6 +30,9 @@ import {CustomComponent} from './basic/directives/custom/custom.component';
 import {FormsComponent} from './forms/forms.component';
 import {TemplatesComponent} from './forms/templates/templates.component';
 import {MatRadioModule} from "@angular/material/radio";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {PatchComponent} from './forms/patch/patch.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,7 @@ import {MatRadioModule} from "@angular/material/radio";
     CustomComponent,
     FormsComponent,
     TemplatesComponent,
+    PatchComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,8 @@ import {MatRadioModule} from "@angular/material/radio";
     FormsModule,
     MatTabsModule,
     MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
