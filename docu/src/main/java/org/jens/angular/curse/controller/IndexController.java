@@ -13,12 +13,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
-        return "redirect:/main";
-    }
-
-    @GetMapping("/main")
-    public String removeToBeginCoding() {
-        return "index";
+        return "redirect:/docs";
     }
 
 }

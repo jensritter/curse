@@ -2,15 +2,10 @@ package org.jens.angular.curse;
 
 import org.jens.angular.curse.config.AppConfig;
 import org.jens.angular.curse.config.MvcConfig;
-import org.jens.shorthand.jdbc.ng.JdbcNG;
 import org.jens.shorthand.spring.boot.HostnameAwareSpringApplicationBuilder;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Primary;
-
-import javax.sql.DataSource;
 
 /**
  * Standalone ApplicationStarter
@@ -34,18 +29,5 @@ public class Application {
         new HostnameAwareSpringApplicationBuilder(Application.class)
             .run(args);
     }
-
-    /**
-     * Test-Datasource
-     */
-    @Configuration
-    public static class DataSources {
-        @Primary
-        @Bean(name = "jdbc_test")
-        public DataSource testDatasourceConfig() {
-            return JdbcNG.h2().getDataSource();
-        }
-    }
-
 
 }

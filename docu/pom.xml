@@ -43,48 +43,7 @@
             <artifactId>spring-restdocs-mockmvc</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <scope>test</scope>
-        </dependency>
 
-        <!-- MiscDB -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-        </dependency>
-
-        <!-- Security -->
-        <dependency>
-            <groupId>org.jens.shorthand.security</groupId>
-            <artifactId>starter-security-ad</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jens.shorthand.security</groupId>
-            <artifactId>starter-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jens.starter</groupId>
-            <artifactId>starter-validation</artifactId>
-        </dependency>
-
-
-        <!-- JavaScript -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>jquery</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
