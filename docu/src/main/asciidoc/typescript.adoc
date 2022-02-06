@@ -129,6 +129,13 @@ class Person implements Human {
     function greet() { }
 }
 
+==== mini-reflections
+
+Zur LAUFZEIT den type einer variable bestimmen :
+
+[source]
+instance:any = 10;
+classname = instance.constructor.name
 === Functions
 
 [source]
@@ -143,3 +150,10 @@ wie in java
 function toArray<T>(a:T, b:T):T[] {
     return [a,b]
 }
+
+=== casting
+
+[source]
+this.serverName = (<HTMLInputElement>event.target).value
+
+

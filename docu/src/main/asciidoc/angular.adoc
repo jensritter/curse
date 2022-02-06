@@ -22,12 +22,20 @@ Setzt keine werte, sondern verbindet properties
 |===
 |Beschreibung|Bsp| Beschreibung
 
-|String interpolation| {{test}}}            | html -> class-property
-|Property Binding    | [property] ="data"   | html -> class-property Value
-|Event Binding       | (event)="expression" | html ->
+|String interpolation| {{expression}}}            | html -> class-property
+|Property Binding    | [property] ="expression"   | https://angular.io/guide/property-binding
+|Event Binding       | (event)="method()" | https://angular.io/guide/event-binding
 |Two-Way-Binding     | [(ngModel)]="data"   | hm.
-
+|others              | ... | https://angular.io/guide/attribute-binding#injecting-attribute-values
 |===
+
+==== Bemerkungen : Event Binding.
+
+.Html-File
+[source,angular2html]
+<input text="text" (input)="onUserInput($event)" />
+
+$event ist special -- wird zur laufzeit zu der aktuellen Event-Instance
 
 ==== string interpolation
 
