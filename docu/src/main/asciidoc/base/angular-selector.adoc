@@ -1,0 +1,15 @@
+=== Selektoren
+
+Components, oder direktiven müssen über die property "selector" immer an HTML gebunden werden.
+
+diese bindung kann entweder direkt auf ein Tag erfolgen:
+
+|===
+|ts|html
+
+|@Component({selector="app-example"})
+|<app-example>
+
+
+|@Component({selector="[jens]"})
+|<p jens>

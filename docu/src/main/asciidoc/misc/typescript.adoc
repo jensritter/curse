@@ -100,6 +100,14 @@ class Person {
 }
 const jens = new Person("jens");
 
+kotlin-constructor-varaible-init :
+
+[source]
+class Jens{
+    constructor(public name:string) {}
+}
+console.log(new Jens("name").name);
+
 ===== constructor-shorthand
 
 [source,java]

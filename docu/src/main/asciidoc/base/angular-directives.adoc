@@ -1,0 +1,107 @@
+== Directives
+
+müssen in module.ts registriert werden ( in declarations )
+
+=== "Style"-Directives
+
+Der Selector sollte eignetlich immer auf ein Attribute zeigen.
+
+via @HostBinding kann man auf die Attributes / Properites des Elements zugreifen.
+
+.ts
+[source,java]
+import {Directive, HostBinding, HostListener, Input, OnInit} from '@angular/core';
+@Directive({
+selector: '[appBetterHightlight]'
+})
+export class BetterHightlightDirective implements OnInit {
+  @HostBinding("style.backgroundColor")
+  backgroundColor: string = "transparent";
+  @Input()
+  defaultColor: string = "transparent";
+  @Input("appBetterHightlight") // default Propertry
+  hightColor: string = "blue";
+  constructor(/*private element: ElementRef, private renderer: Renderer2*/) {
+  }
+  ngOnInit(): void {
+    this.backgroundColor = this.defaultColor;
+  }
+  @HostListener("mouseenter") mouseenter(event: Event) {
+    // this.renderer.setStyle(this.element.nativeElement, "background-color", "blue");
+    this.backgroundColor = this.hightColor;
+  }
+  @HostListener("mouseleave") mouseleave(event: Event) {
+    // this.renderer.setStyle(this.element.nativeElement, "background-color", "transparent");
+    this.backgroundColor = this.defaultColor;
+  }
+}
+
+.html
+[source]
+<p [appBetterHightlight] = "'red'" [defaultColor]="'yellow'" >style me with better hightlight</p>
+
+oder die property ohne [] -- dann ist die wertzuweisung auch nur ein string, und keine expression mehr:
+
+.html
+[source]
+<p [appBetterHightlight] = "'red'" defaultColor="yellow" >style me with better hightlight</p>
+
+=== Structural Directives
+
+Erstellt auch DOM-Elemente
+
+.ts
+[source]
+@Directive({
+  selector: '[appUnless]'
+})
+export class UnlessDirective {
+
+  @Input()
+  set appUnless(condition: boolean) {
+    if (!condition) {
+      this.viewRef.createEmbeddedView(this.templateRef);
+    } else {
+      this.viewRef.clear();
+    }
+  }
+
+  constructor(private templateRef: TemplateRef<any>, private viewRef: ViewContainerRef) { }
+
+}
+
+Struktur-Directives können auch als attribute mit "*" verwendet werden -- dies ist dann aber immer ein Shortcut.
+
+=== Default-Directives
+
+==== ngIf
+
+.html if
+[source,angular2html]
+<p *ngIf="condition">print if Condition isTrue</p>
+
+.html if-with-else
+[source,angular2html]
+<p *ngIf="condition; else CustomName">print if Condition isTrue</p>
+<ng-template #CustomName>
+  <p>print if Condition isFalse</p>
+</ng-template>
+
+"else" sieht total merkwürdig aus ... gefällt mir so garnicht ./
+
+==== ngFor
+
+.html
+[source]
+<p *ngFor="let item of mylist">{{item}}</p>
+
+Zugriff auf den Iterator-Index : ( siehe https://angular.io/api/common/NgForOf#local-variables für weitere lokale variablen )
+
+.html
+[source]
+<p *ngFor="let item of myList; let index = index; let maxSize = count;">{{item}} with {{maxSize}}</p>
+
+==== ngSwitch
+
+.html
+[source]

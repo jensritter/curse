@@ -1,0 +1,31 @@
+=== Styling
+
+==== ngClass
+
+Eingentlich eine einfage Zuweisung zum classe-attribute eines elements:
+
+Das Binding kann ein string, Array, oder eine Map ( object ) sein. (https://angular.io/api/common/NgClass)
+
+ngClass kann nur "hinzufügen" .. d.h. andere class-zuweisungen bleiben erhalten ( via Js/html)
+
+.html as Expression
+[source]
+<p [ngClass]="getClassName()">text</p>
+
+Sofern ngClass aber unterschiedliche Klassen zuweisen muss, ist der aufruf via MAP viel schöner :
+
+.html as MAP
+[source]
+<p [ngClass]="{odd: number %2 !== 0, even:number %2 ==0}">text</p>
+
+==== ngStyle
+
+ngStyle kann auch Maps als Parameter vertragen, hier sind die maps aber pro Style-Attribute :/
+
+.html as Expression
+[source]
+<p [ngStyle]="{'background-color':getColor()">text</p>
+
+.html as Map
+[source]
+<p [ngStyle]="{backgroundColor: even % 2 !==0 ? 'yellow':'transparent', fontSize: '24px', textAlign: even%2 ==0?'center':'left'}">text</p>

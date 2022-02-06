@@ -1,0 +1,21 @@
+== Wichtige Klassen
+
+=== EventEmitter {angular/core}
+
+Wird zum Versenden von Events an Parent-Components verwendet.
+
+.ts
+[source]
+@Output
+itemAdd = new EventEmitter<CustomType>();
+trigger() {
+    itemAdd.event.emit(new CustomType());
+}
+
+https://angular.io/api/core/EventEmitter
+
+=== ElementRef
+
+Wrapper für eine Referenz auf ein HtmlEntity
+
+https://angular.io/api/core/ElementRef
