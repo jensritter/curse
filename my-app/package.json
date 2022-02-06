@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-hashing none",
+    "build": "ng build --output-hashing none --base-href /angular/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --coverage --log-heap-usage -w=2",
     "lint": "ng lint"
