@@ -118,13 +118,9 @@ Die Routen werden in der reihenfolge beachtet, wie sie hinterlegt sind. -- Wildc
 [source]
 {path: "**", redirectTo:'/not-found'}
 {path: "oldLinkExist", redirectTo:'/newLink'}
-
-===== complete-Path
-
-speziell für einen default-redirect sinnvoll, da "path:''" für alle hinterlegten Routen greift.
-
-[source]
 {path: "", redirectTo: '/index', pathMatch: 'full'}
+
+Speziell für einen default-redirect sinnvoll, da "path:''" für alle hinterlegten Routen greift.
 
 === Auslagerung der Routen in ein eigenes ngModule :
 

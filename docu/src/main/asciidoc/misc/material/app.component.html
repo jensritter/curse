@@ -1,0 +1,52 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon (click)="toggleNav()">menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span style="flex: 1 1 auto;"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu>
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            Btn1
+        </button>
+        <button mat-menu-item>
+            <mat-icon>person</mat-icon>
+            Btn2
+        </button>
+    </mat-menu>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" [opened]="navVisible">
+        <div>
+            <mat-list>
+                <mat-list-item>1adasd asd asd sd sd asd asd asd asd asd asd asd asd d</mat-list-item>
+                <mat-list-item>2</mat-list-item>
+                <mat-list-item>3</mat-list-item>
+            </mat-list>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col" style="text-align: center;">1</div>
+                <div class="col" style="text-align: center;">2</div>
+            </div>
+            <div class="row">
+                wtf ?
+                sdlfkjs dlfkj
+                lsdkfjl sdfj
+                <br />
+                sldfkjsl dfkj
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

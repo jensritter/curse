@@ -7,9 +7,4 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  currentPage = "recipies";
-
-  onSwitchPage(event: string) {
-    this.currentPage = event;
-  }
 }
