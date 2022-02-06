@@ -1,9 +1,4 @@
 == Angular CLI
-
-=== CLI
-
-| ng serve |
-
 .Table
 |===
 |Command|Descrption

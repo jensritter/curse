@@ -1,4 +1,4 @@
-= Beschreibung
+= Angular Dokumentation
 von Jens Ritter <jens.ritter@gmail.com>
 {project-name} {project-version} {docdatetime}
 :iconfont-remote!:
