@@ -145,3 +145,8 @@ ngClass kann nur "hinzufügen" .. d.h. andere class-zuweisungen bleiben erhalten
 [source]
 <p *ngFor="let item of mylist">{{item}}</p>
 
+Zugriff auf den Iterator-Index : ( siehe https://angular.io/api/common/NgForOf#local-variables für weitere lokale variablen )
+
+.html
+[source]
+<p *ngFor="let item of myList; let index = index; let maxSize = count;">{{item}} with {{maxSize}}</p>

@@ -10,6 +10,8 @@ export class AssignmentComponent implements OnInit {
   servers: string[] = [];
   alert: string = "";
   alertIsOk = true;
+  showDetails: boolean = false;
+  assLog: LogItem[] = [];
 
   constructor() {
   }
@@ -28,5 +30,24 @@ export class AssignmentComponent implements OnInit {
   serverListUsed() {
     return this.servers.length > 0;
   }
+
+  toggle() {
+    this.showDetails = !this.showDetails
+    this.assLog.push(new LogItem(this.assLog.length, "current status " + this.showDetails));
+  }
+}
+
+export class LogItem {
+  id: number;
+  text: string;
+  timestamp: Date;
+
+
+  constructor(counter: number, txt: string) {
+    this.id = counter;
+    this.text = txt;
+    this.timestamp = new Date();
+  }
+
 
 }
