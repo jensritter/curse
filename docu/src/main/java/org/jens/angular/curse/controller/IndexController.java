@@ -13,7 +13,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
-        return "redirect:/docs";
+        return "redirect:/docs/index.html";
     }
 
 }
