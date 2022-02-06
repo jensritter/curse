@@ -3,9 +3,21 @@
 === Vorraussetzungen
 
 - FormsModel in app.module.ts
-- <form>-Tags im Templates
+- <form>-Tags im Templates mit (ngOnSubmit) EventHandler
 - <input>-Tags mit befülltem "name" attribute
 - ngModel als Attribute für <input>/<select>-Element
 
-Abfagen des "onSubmit"-Buttons: <form (ngOnSubmit) = "onSubmit($event)">
+
+==== Abfagen des "onSubmit"-Buttons und behandeln des Form-Inhaltes
+
+    <form (ngOnSubmit) = "onSubmit(form)" #form="ngForm">
+
+Es wird eine Referenz auf das Form-Tag gesetzt "#form", und diesem wird die Varaible "ngForm" zugewiesen, die nur im Template zur Verfügung steht.
+Dadurch kann form als Parameter für das Event verwendet werden.
+
+==== Default-Values für ngModel-Elements
+
+    <input [ngModel] = "property" name="property">
+
+Dies ist kein 2-Way-Binding damit kann man aber die initial-werte bestimmen.
 

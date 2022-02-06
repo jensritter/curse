@@ -13,16 +13,16 @@
   </mat-card-content>
 </mat-card>
 <mat-card>
-  <mat-card-title>Unterthema</mat-card-title>
+  <mat-card-title>Unterthema auswählen</mat-card-title>
   <mat-card-content>
     <div>
-      <form (ngSubmit)="changePage()">
+      <form (ngSubmit)="changePage(forms)" #forms="ngForm">
         <div>
-          <mat-radio-group aria-label="Select an option" name="selection" ngModel>
-            <mat-radio-button value="1" style="padding-right: 20px;">Template</mat-radio-button>
-            <mat-radio-button value="2" style="padding-right: 20px;">Option 2</mat-radio-button>
+          <mat-radio-group aria-label="Select an option" name="selection" [ngModel]="selected" required>
+            <mat-radio-button value="template" style="padding-right: 20px;">Template</mat-radio-button>
+            <mat-radio-button value="other" style="padding-right: 20px;">Option 2</mat-radio-button>
           </mat-radio-group>
-          <button mat-raised-button type="submit" color="primary">Open Page</button>
+          <button mat-raised-button type="submit" color="primary" [disabled]="forms.invalid">Open Page</button>
         </div>
       </form>
     </div>

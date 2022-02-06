@@ -31,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: "forms", component: FormsComponent, children: [
-      {path: "templates", component: TemplatesComponent}
+      {path: "templates", component: TemplatesComponent},
+      {path: "other", component: EmptyPageComponent}
     ]
   }
 ];

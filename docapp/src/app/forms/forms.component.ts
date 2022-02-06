@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {NgForm} from "@angular/forms";
+import {ActivatedRoute, PRIMARY_OUTLET, Router, UrlSegment, UrlSegmentGroup} from "@angular/router";
 
 @Component({
   selector: 'app-forms',
@@ -7,13 +9,35 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
+
+  selected: string = "";
 
   ngOnInit(): void {
+    // get path from (complete) current path :
+    const i = this.router.parseUrl(this.router.url);
+    const g: UrlSegmentGroup = i.root.children[PRIMARY_OUTLET];
+    const s: UrlSegment[] = g.segments; // returns 2 segments 'team' and '33'
+    if (s.length > 1) {
+      this.selected = s[1].toString();
+    }
   }
 
-  changePage() {
-    console.log("trigger");
+  changePage(form: NgForm) {
+    // console.log(form);
+    console.log(form.value);
+    switch (form.value.selection) {
+      case "template":
+        this.router.navigate(["templates"], {relativeTo: this.activatedRoute});
+        console.log("selected template")
+        break;
+      case "other":
+        console.log("selected other")
+        break;
+      default:
+        alert("Unknown selection");
+        break;
+    }
   }
 }
