@@ -1,0 +1,39 @@
+.log-info {
+  background-color: transparent;
+
+  &:before {
+    content: '[INFO]';
+  }
+}
+
+.log-debug {
+  background-color: lightgray;
+  color: gray;
+
+  &:before {
+    content: '[DEBUG]';
+  }
+}
+
+.log-warn {
+  color: blue;
+  background-color: yellow;
+
+  &:before {
+    content: '[WARN]';
+  }
+}
+
+.log-error {
+  color: white;
+  background-color: red;
+
+  &:before {
+    content: '[ERR]';
+  }
+}
+
+.log-undefinied {
+  background-color: azure;
+  color: rebeccapurple;
+}

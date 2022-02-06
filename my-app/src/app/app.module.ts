@@ -10,6 +10,7 @@ import {ApplistComponent} from './applist/applist.component';
 import {AssignmentComponent} from './assignment/assignment.component';
 import {AssAlertComponent} from './ass-alert/ass-alert.component';
 import {AssBindingComponent} from './ass-binding/ass-binding.component';
+import {FetchRandomComponent} from './fetch-random/fetch-random.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AssBindingComponent} from './ass-binding/ass-binding.component';
     ApplistComponent,
     AssignmentComponent,
     AssAlertComponent,
-    AssBindingComponent
+    AssBindingComponent,
+    FetchRandomComponent
   ],
   imports: [
     BrowserModule,

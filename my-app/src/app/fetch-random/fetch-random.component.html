@@ -1,0 +1,14 @@
+<button (click)="doFetch()">Fetch</button>
+<div>
+  <p>{{value}}</p>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title">Logging</h3></div>
+  <div class="panel-body">
+    <ul style="margin: 0;padding:0; list-style: none;" id="logging">
+      <li *ngFor="let item of logging" [ngClass]="item.levelClass()">
+        {{item.ts.toLocaleTimeString()}} {{item.text}}
+      </li>
+    </ul>
+  </div>
+</div>
