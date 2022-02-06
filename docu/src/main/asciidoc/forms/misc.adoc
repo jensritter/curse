@@ -1,0 +1,7 @@
+forms-directiven : https://angular.io/api?type=directive
+
+forms- Validators : https://angular.io/api/forms/Validators
+
+Additionally, you might also want to enable HTML5 validation (by default, Angular disables it).
+You can do so by adding the ngNativeValidate to a control in your template.
+

@@ -2,6 +2,8 @@
 
 müssen in module.ts registriert werden ( in declarations )
 
+von Angular unterstützte Direktiven : https://angular.io/api?type=directive
+
 === "Style"-Directives
 
 Der Selector sollte eignetlich immer auf ein Attribute zeigen.
