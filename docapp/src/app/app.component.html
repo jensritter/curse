@@ -4,30 +4,23 @@
     <mat-icon>menu</mat-icon>
   </button>
   Angular-Documentation
-
-  <!--  <button mat-button class="menu-button">-->
-  <!--    <mat-icon>person</mat-icon>-->
-  <!--    <span>Profile</span>-->
-  <!--  </button>-->
-  <!--  <button mat-button class="menu-button">-->
-  <!--    <mat-icon>info</mat-icon>-->
-  <!--    <span>About</span>-->
-  <!--  </button>-->
-
   <mat-divider></mat-divider>
-
-
 </mat-toolbar>
 
 <mat-sidenav-container>
 
   <mat-sidenav [opened]="menuopen" mode="side">
-    <h1>Menu</h1>
+      <h1>Menu</h1>
+
+      <ul style="list-style: none; padding:0;">
+          <li><H2>Basics</H2>
+              <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
+          </li>
+      </ul>
   </mat-sidenav>
 
   <mat-sidenav-content class="content mat-elevation-z8">
     <!--    <div class="content mat-elevation-z8">-->
-    JENS RITTER
     <router-outlet></router-outlet>
     <!--    </div>-->
   </mat-sidenav-content>
