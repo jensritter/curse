@@ -18,6 +18,7 @@
     <modules>
         <module>docu</module>
         <module>my-app</module>
+        <module>modules</module>
     </modules>
 
 </project>
