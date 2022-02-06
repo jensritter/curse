@@ -11,7 +11,7 @@ import {Component} from '@angular/core';
       <span style="display: block">{{ title }} app is running!</span>
     </div>
     <div>
-      <input [(ngModel)]="title" type="text" id="eingang" placeholder="Enter Name" />
+      <input [(ngModel)]="title" type="text" id="eingang" name="eingang" placeholder="Enter Name" />
     </div>
     <h2>Here are some links to help you start: </h2>
     <ul>
