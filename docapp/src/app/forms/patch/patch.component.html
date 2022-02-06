@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>Patchen von ngModel - Werten</mat-card-title>
+  <mat-card-content>
+
+  </mat-card-content>
+</mat-card>
+
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <input type="text" ngModel name="name">
+  <input type="text" ngModel name="vorname">
+  <div>
+    <button mat-raised-button color="accent" (click)="fillForm(form)">FillForm-complete</button>
+    <button mat-raised-button color="accent" (click)="fillName()">FillForm-OnlyName</button>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
