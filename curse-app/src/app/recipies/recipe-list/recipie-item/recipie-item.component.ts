@@ -9,7 +9,7 @@ import {RecipeService} from "../../recipe.service";
 })
 export class RecipieItemComponent implements OnInit {
   @Input()
-  recipie: Recipie = new Recipie("", "", "")
+  recipie: Recipie = new Recipie("", "", "", []);
 
   constructor(private recipieService: RecipeService) {
   }

@@ -18,5 +18,9 @@
   {{recipie.description}}
 </div>
 <div class="row">
-  ingredients
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let ingredient of recipie.ingredients">
+      {{ingredient.name}} - {{ingredient.amount}}
+    </li>
+  </ul>
 </div>
