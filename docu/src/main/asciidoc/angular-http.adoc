@@ -1,0 +1,12 @@
+.app.module.ts
+[source]
+import {HttpClientModule} from "@angular/common/http";
+....
+imports [
+...
+    HttpClientModule
+...
+]
+
+added to "imports"
+

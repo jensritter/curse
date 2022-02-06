@@ -11,6 +11,7 @@ import {AssignmentComponent} from './assignment/assignment.component';
 import {AssAlertComponent} from './ass-alert/ass-alert.component';
 import {AssBindingComponent} from './ass-binding/ass-binding.component';
 import {FetchRandomComponent} from './fetch-random/fetch-random.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FetchRandomComponent} from './fetch-random/fetch-random.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
