@@ -1,5 +1,24 @@
 <!--
 <app-ass-alert [message]="'Success-Message'" [success]="true"></app-ass-alert>
 <app-ass-alert [message]="'Fail-Message'" [success]="false"></app-ass-alert>
--->
 <app-ass-binding></app-ass-binding>
+
+  <div class="alert" [ngClass]="{'alert-success': this.alertIsOk, 'alert-danger': !this.alertIsOk}">{{alert}}</div>
+-->
+<div class="form-group">
+  <label for="name">ServerName</label>
+  <input type="text" [(ngModel)]="name" name="name" id="name" class="form-control" placeholder="ServerName">
+  <button class="btn btn-primary" (click)="onBtnClick()">Add Server</button>
+  <div>
+    <div>Current server : {{name}}</div>
+    <div>Created Servers:
+      <div *ngIf="serverListUsed()">
+
+        <div *ngFor="let name of servers">
+          {{name}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

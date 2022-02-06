@@ -69,6 +69,23 @@ export class AppComponent {
 
 Benötigt FormsModule als Import : ( manuell, kommt nicht von Intelllij ) .app.module.ts
 
+==== Import Forms
+
+===== Fehlermeldung : "Can't bind to 'ngModel' since it isn't a known property of 'input'"
+
+.Lösung1:
+<input>Element hat kein "name"-Property
+
+.Lösung2:
+FormsModule import in app.modoule.ts fehlt
+
+.Lösung3:
+Reihenfolge der Import in app.module.ts:
+
+1. BrowserModule
+2. FormsModule
+3. ReactiveFormsModule
+
 [source]
 import {FormsModule} from "@angular/forms";
 ...
@@ -77,12 +94,54 @@ imports: [
     FormsModule
 ]
 
-==== Workarounds
+=== Directives : ngIf / ngStyle
 
-===== ( during TEST ) "Can't bind to 'ngModel' since it isn't a known property of 'input'"
+==== ngIf ( und else )
 
-<input>Element hat kein "name"-Property
+.html if
+[source,angular2html]
+<p *ngIf="condition">print if Condition isTrue</p>
 
-oder :
-Import in app.module.ts : order imports : 1) BrowserModule, 2) FormsModule, and 3) ReactiveFormsModule.
+.html if-with-else
+[source,angular2html]
+<p *ngIf="condition; else CustomName">print if Condition isTrue</p>
+<ng-template #CustomName>
+  <p>print if Condition isFalse</p>
+</ng-template>
+
+"else" sieht total merkwürdig aus ... gefällt mir so garnicht ./
+
+==== ngStyle
+
+... hm. mixing programming + styling .. hm. nicht gut.
+
+.html
+[source]
+<p [ngStyle]="{'background-color':getColor()">text</p>
+
+.ts
+[source]
+getColor() {
+return "red";
+}
+
+==== ngClass
+
+ha ... hier kommt ngClass :)
+
+.html
+[source]
+<div [ngClass]="{alert:true, 'alert-success': this.alertIsOk, 'alert-danger': !this.alertIsOk}">{{alert}}</div>
+
+PropertyBinding zu 'ngClass' setzt eine klasse.
+Das Binding kann ein string, Array, oder eine Map ( object ) sein.
+(https://angular.io/api/common/NgClass)
+
+ngClass kann nur "hinzufügen" .. d.h. andere class-zuweisungen bleiben erhalten ( via Js/html)
+
+==== ngFor
+
+.html
+[source]
+<p *ngFor="let item of mylist">{{item}}</p>
 
