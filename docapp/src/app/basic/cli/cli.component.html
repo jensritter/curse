@@ -1,0 +1,77 @@
+<mat-card>
+  <mat-card-title>
+    Angular CLI and Setup
+  </mat-card-title>
+  <mat-card-content>
+
+    <p>
+      Für Angular ist die CLI "ng" notwendig. Installation dieser App in der aktuellsten Version zu installieren :
+    </p>
+    <pre>npm install -g @angular/cli</pre>
+
+    Offizielle Hilfe :
+    <app-link>https://angular.io/cli</app-link>
+
+    <div class="row">
+      <div class="col-md-3">
+
+        <mat-card>
+          <mat-card-title>ng new &lt;name&gt;</mat-card-title>
+          <mat-card-content>
+            Erstellt eine neue Angular - Anwendung im angegeben Verzeichnis.
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+      <div class="col-md-3 offset-1">
+
+        <mat-card>
+          <mat-card-title>ng (g)enerate &lt;TYPE&gt; &lt;name&gt;</mat-card-title>
+          <mat-card-content>
+            <p>
+              Erstellt neue Dateien im aktuellen Projekt
+            </p>
+
+            <div>
+              TYPE= (c)omponent
+              (s)ervice
+              (d)irective
+            </div>
+
+            <p>Nützliche Optionen:</p>
+            <div>
+              -g => skip git
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+      <div class="col-md-3 offset-1">
+
+        <mat-card>
+          <mat-card-title>ng serve</mat-card-title>
+          <mat-card-content>
+            Startet den DevServer, und lässt die Anwendung auf
+            <app-link>http://localhost:4200</app-link>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+
+        <mat-card>
+          <mat-card-title>ng test / ng build</mat-card-title>
+          <mat-card-content>
+            Macht was der parameter verspricht.
+            Siehe die Datei "angular.json" für eine genaue definition, bzw. "package.json" für den aufruf via npm
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+
+
+  </mat-card-content>
+
+</mat-card>

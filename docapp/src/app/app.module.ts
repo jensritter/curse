@@ -12,11 +12,16 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatButtonModule} from "@angular/material/button";
 import {CliComponent} from './basic/cli/cli.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
+import {EmptyPageComponent} from './empty-page/empty-page.component';
+import {LinkComponent} from './link/link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CliComponent
+    CliComponent,
+    EmptyPageComponent,
+    LinkComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import {MatCardModule} from "@angular/material/card";
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

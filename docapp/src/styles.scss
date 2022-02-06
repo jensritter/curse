@@ -22,4 +22,13 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons.scss';
 
 
-@import "node_modules/bootstrap/scss/bootstrap";
+//@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap-grid";
+
+
+pre {
+  font-family: Monaco, "Lucida Console", monospace;
+  background-color: lightgray;
+  margin: 20px;
+  padding: 10px;
+}
