@@ -34,13 +34,22 @@ Bindet ein Form-Element zu einier Component - Property
 
 .Html-File
 [source,angular2html]
-<input type="text"  [(ngModel)]="propertyName" />
+<input type="text"  [(ngModel)]="propertyName" name="sdf" />
 
 .Ts-File
 [source,typescript]
 export class AppComponent {
   title = 'first-app';
 }
+
+==== Workarounds
+
+===== ( during TEST ) "Can't bind to 'ngModel' since it isn't a known property of 'input'"
+
+<input>Element hat kein "name"-Property
+
+oder :
+Import in app.module.ts : order imports : 1) BrowserModule, 2) FormsModule, and 3) ReactiveFormsModule.
 
 == ChapterA
 
