@@ -6,15 +6,16 @@
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control"
-                   ngModel name="username"
+                   ngModel name="username" required
             >
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
             <input type="email" id="email" class="form-control"
-                   ngModel name="email"
+                   ngModel name="email" required email #email="ngModel"
             >
+            <span *ngIf="email.invalid && email.touched" class="help-block">Please enter a valid email</span>
           </div>
         </div>
         <div class="form-group">
@@ -26,7 +27,10 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit"
+                [disabled]="f.invalid"
+        >Submit
+        </button>
       </form>
     </div>
   </div>

@@ -1,3 +1,9 @@
 .container {
   margin-top: 30px;
 }
+
+
+/*  only on <INPUT class='ng-invalid ng-touched'>*/
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
