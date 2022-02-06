@@ -24,8 +24,19 @@ export class AssAlertComponent {
       this.cssclass = "alert-danger";
     }
   }
-
+/*
   constructor() {
+    setTimeout(() => {this.successFlipper();}, 50);
   }
 
+  successFlipper() {
+    if (this.cssclass === "alert-success") {
+      this.cssclass = "alert-danger";
+    } else {
+      this.cssclass = "alert-success";
+    }
+    //console.log("flipping " + this.constructor.name + " " +Date.now())
+    setTimeout(() => {this.successFlipper();},50);
+  }
+*/
 }

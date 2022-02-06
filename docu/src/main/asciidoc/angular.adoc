@@ -15,6 +15,36 @@
 
 == Angular
 
+=== DataBinding
+
+Setzt keine werte, sondern verbindet properties
+
+|===
+|Beschreibung|Bsp| Beschreibung
+
+|String interpolation| {{test}}}            | html -> class-property
+|Property Binding    | [property] ="data"   | html -> class-property Value
+|Event Binding       | (event)="expression" | html ->
+|Two-Way-Binding     | [(ngModel)]="data"   | hm.
+
+|===
+
+==== string interpolation
+
+.Html-File
+[source,angular2html]
+<p>{{property}} is a string </p>
+<p>{{id}} is convert to a string</p>
+<p>{{func()}} is executed and the return-value is converted to a String</p>
+
+.Ts-File
+[source,js]
+class component {
+    property: string = "some value";
+    id: number = 10;
+    func() { return id; }
+}
+
 === Model
 
 Bindet ein Form-Element zu einier Component - Property
