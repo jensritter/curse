@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Recipie} from "./recipe";
 import {Ingredient} from "../ingredient";
 import {ShoppingListService} from "../shopping-list/shopping-list.service";
@@ -7,8 +7,6 @@ import {ShoppingListService} from "../shopping-list/shopping-list.service";
 export class RecipeService {
 
   private IMAGELINK: string = "https://www.taste-and-more.ch/media/image/5b/10/66/Mie-Noodels-Asiatisch-by-taste-and-more-ch_600x600.jpg";
-
-  recipieSelected = new EventEmitter<Recipie>();
 
   constructor(private shoppingService: ShoppingListService) {
   }
