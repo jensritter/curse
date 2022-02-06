@@ -6,8 +6,8 @@
 <hr />
 <div class="row">
   <div class="col-md-12">
-    <div *ngFor="let row of recipieService.getRecipies()">
-      <app-recipie-item [recipie]="row"></app-recipie-item>
+    <div *ngFor="let row of recipieService.getRecipies(); let index = index;">
+      <app-recipie-item [id]="index"></app-recipie-item>
     </div>
   </div>
 </div>

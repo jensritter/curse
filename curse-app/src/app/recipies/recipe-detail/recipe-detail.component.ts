@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Recipie} from "../recipe";
 import {RecipeService} from "../recipe.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-detail',
@@ -11,12 +12,13 @@ export class RecipeDetailComponent implements OnInit {
 
   recipie = new Recipie("", "", "", [])
 
-  constructor(private recipieService: RecipeService) {
+  constructor(private recipieService: RecipeService, private activeRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.recipieService.recipieSelected.subscribe(it => {
-      this.recipie = it;
+    this.activeRoute.params.subscribe(data => {
+      const id = parseInt(data["id"])
+      this.recipie = this.recipieService.getRecipies()[id];
     });
   }
 
