@@ -1,0 +1,145 @@
+== Type Script
+
+=== Typen
+
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
+
+Type inference: wenn variable ein wert zugewiesen wird, probiert TS den type für die variable autom. zu definieren. -- muss man ggf. manuell gegenwirken ( ?? wie geht casten?)
+
+[source]
+let a = "hello";
+a = 10; // ERROR
+
+==== string
+
+[source]
+let name: string = "welcome";
+
+==== number
+
+[source]
+let year: number = 2014;
+
+==== boolean
+
+[source]
+let isOlder: boolean = true;
+
+==== any
+
+[source]
+let jquery: any;
+
+==== arrays
+
+[source]
+let years: number[] = [1,2,3,4,5];
+let otheryears: number[] = [0,1, ...year]; // ...years == alle element aus Years
+
+==== (inline) Objects
+
+[source]
+let person: {name:string, age:number};
+
+==== void
+
+nur für Return-Types für Funktionen
+
+[source]
+function makeItSo(): void
+
+==== union
+
+schrecklich :
+
+[source]
+let a : number|string|string[]
+a=10; // OK
+a="hei"; // OK
+a = [1,2,3]; //OK
+
+=== make let not var -- or use const
+
+|===
+|What|Scope
+
+| let | Block
+| var | Function
+| const | final value
+|===
+
+=== Class/interface
+
+==== type
+
+type ist sowas wie ein interface ..
+
+[source]
+type Person = {name: string; age: number};
+let jens : Person;
+
+==== Class
+
+[source,java]
+class Person {
+    name: string;
+    private age: number; // private Property
+
+    constructor(first:string) {
+        this.name = first;
+    }
+    function welcome() {
+        console.log(this.name);
+    }
+    function age() {
+        this.age = this.age + 1;
+    }
+    welcome2() { // 'function' ist optional ...
+        welcome();
+    }
+}
+const jens = new Person("jens");
+
+===== constructor-shorthand
+
+[source,java]
+class Person2 {
+    constructor(public name:string) {} // shorthand für variable init
+}
+const jens2 = new Person2("jens");
+
+==== interface
+
+java-like -- enthalten aber immer nur vorlagen -- niemals implementaionen.
+(objects müssen also auch properties definieren)
+
+[source]
+interface Human {
+    name: string;
+    greet: () => void
+}
+let jens: Human = {
+    name:"jens",
+    greet() {
+        console.log("HI")
+    }
+};
+class Person implements Human {
+    name: string;
+    function greet() { }
+}
+
+=== Functions
+
+[source]
+function add(a: number,b:number) : number {
+}
+
+=== Generic-Functions
+
+wie in java
+
+[source]
+function toArray<T>(a:T, b:T):T[] {
+    return [a,b]
+}
