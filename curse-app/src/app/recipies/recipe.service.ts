@@ -16,7 +16,7 @@ export class RecipeService {
   private recipies: Recipie[] = [
     new Recipie("Tasty Schnitzel",
       "Tasty Schnitzel",
-      "/assets/schnitzel.jfif", [
+      "/assets/schnitzel.jpg", [
         new Ingredient("Meat", 1),
         new Ingredient("French Fries", 20),
       ]
@@ -32,6 +32,10 @@ export class RecipeService {
 
   getRecipies() {
     return this.recipies.slice();
+  }
+
+  getRecipie(idx: number) {
+    return this.recipies[idx];
   }
 
   addToShoppingList(recipie: Recipie) {

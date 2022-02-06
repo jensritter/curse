@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Recipie} from "../../recipe";
 import {RecipeService} from "../../recipe.service";
-import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-recipie-item',
@@ -15,15 +14,11 @@ export class RecipieItemComponent implements OnInit {
   @Input()
   id: number = 0;
 
-  constructor(private recipieService: RecipeService, private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private recipieService: RecipeService) {
   }
 
   ngOnInit(): void {
-    this.recipie = this.recipieService.getRecipies()[this.id];
+    this.recipie = this.recipieService.getRecipie(this.id);
   }
 
-  onSelected() {
-    //this.recipieService.recipieSelected.emit(this.recipie);
-    this.router.navigate([this.id], {relativeTo: this.activeRoute});
-  }
 }

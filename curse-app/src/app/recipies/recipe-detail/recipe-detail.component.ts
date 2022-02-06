@@ -18,7 +18,7 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe(data => {
       const id = parseInt(data["id"])
-      this.recipie = this.recipieService.getRecipies()[id];
+      this.recipie = this.recipieService.getRecipie(id);
     });
   }
 
