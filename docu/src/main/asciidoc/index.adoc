@@ -13,6 +13,7 @@ http://localhost:4200/
 
 :toc:
 include::base/angular.adoc[]
+include::base/angular-directives.adoc[]
 include::base/angular-lifecircle.adoc[]
 include::base/ngclass-and-ngstyle.adoc[]
 include::base/wichtige-klassen.adoc[]
