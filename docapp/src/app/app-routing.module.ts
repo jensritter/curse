@@ -11,6 +11,8 @@ import {NgifComponent} from "./basic/directives/ngif/ngif.component";
 import {NgstyleComponent} from "./basic/directives/ngstyle/ngstyle.component";
 import {NgswitchComponent} from "./basic/directives/ngswitch/ngswitch.component";
 import {CustomComponent} from "./basic/directives/custom/custom.component";
+import {FormsComponent} from "./forms/forms.component";
+import {TemplatesComponent} from "./forms/templates/templates.component";
 
 const routes: Routes = [
   {path: "", component: EmptyPageComponent, pathMatch: "full"},
@@ -25,6 +27,11 @@ const routes: Routes = [
       {path: "ngstyle", component: NgstyleComponent},
       {path: "ngswitch", component: NgswitchComponent},
       {path: "custom", component: CustomComponent},
+    ]
+  },
+  {
+    path: "forms", component: FormsComponent, children: [
+      {path: "templates", component: TemplatesComponent}
     ]
   }
 ];

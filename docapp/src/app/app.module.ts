@@ -27,6 +27,9 @@ import {NgstyleComponent} from './basic/directives/ngstyle/ngstyle.component';
 import {NgswitchComponent} from './basic/directives/ngswitch/ngswitch.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {CustomComponent} from './basic/directives/custom/custom.component';
+import {FormsComponent} from './forms/forms.component';
+import {TemplatesComponent} from './forms/templates/templates.component';
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import {CustomComponent} from './basic/directives/custom/custom.component';
     NgstyleComponent,
     NgswitchComponent,
     CustomComponent,
+    FormsComponent,
+    TemplatesComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,7 @@ import {CustomComponent} from './basic/directives/custom/custom.component';
     MatTooltipModule,
     FormsModule,
     MatTabsModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

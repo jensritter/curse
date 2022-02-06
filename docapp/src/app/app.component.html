@@ -11,20 +11,29 @@
   <mat-sidenav [opened]="menuopen" mode="side" class="col-md-2" style="height: 100%;">
     <div>
       <div style="padding: 8px;">
-        <h2>Basic</h2>
         <div>
-          <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
-        </div>
-        <div>
-          <button mat-button routerLink="basic/structure" routerLinkActive="mat-raised-button mat-accent">Struktur</button>
-        </div>
-        <div>
-          <button mat-button routerLink="basic/databinding" routerLinkActive="mat-raised-button mat-accent">DataBinding</button>
-        </div>
-        <div>
-          <button mat-button routerLink="basic/directives" routerLinkActive="mat-raised-button mat-accent">Directives</button>
+          <h2 routerLinkActive="actvive-sub">Basic</h2>
+          <div>
+            <button mat-button routerLink="basic/cli" routerLinkActive="mat-raised-button mat-accent">CLI</button>
+          </div>
+          <div>
+            <button mat-button routerLink="basic/structure" routerLinkActive="mat-raised-button mat-accent">Struktur</button>
+          </div>
+          <div>
+            <button mat-button routerLink="basic/databinding" routerLinkActive="mat-raised-button mat-accent">DataBinding</button>
+          </div>
+          <div>
+            <button mat-button routerLink="basic/directives" routerLinkActive="mat-raised-button mat-accent">Directives</button>
+          </div>
+
         </div>
 
+        <div style="margin-top: 10px;">
+          <!--          <h2 style="border: 1px solid green;">Forms          </h2>-->
+          <div>
+            <button mat-button routerLink="forms" routerLinkActive="mat-raised-button mat-accent">Forms</button>
+          </div>
+        </div>
       </div>
     </div>
 

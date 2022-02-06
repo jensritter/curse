@@ -1,0 +1,11 @@
+== By Templates
+
+=== Vorraussetzungen
+
+- FormsModel in app.module.ts
+- <form>-Tags im Templates
+- <input>-Tags mit befülltem "name" attribute
+- ngModel als Attribute für <input>/<select>-Element
+
+Abfagen des "onSubmit"-Buttons: <form (ngOnSubmit) = "onSubmit($event)">
+

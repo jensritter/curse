@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Forms</mat-card-title>
+  <mat-card-content>
+    <h3>Vorraussetungen : </h3>
+    <ul>
+      <li>FormsModel in app.module.ts</li>
+      <li>&lt;form&gt;-Tags im Templates</li>
+      <li>&lt;input&gt;-Tags mit befülltem "name" attribute</li>
+      <li>ngModel als Attribute für &lt;input&gt;/&lt;select&gt;-Element</li>
+      <li>Event (ngSubmit) auf &lt;form&gt; verwenden, um Submit abzufangen.</li>
+      ( Es darf weiterhin ein "button type=submit" geben. )
+    </ul>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Unterthema</mat-card-title>
+  <mat-card-content>
+    <div>
+      <form (ngSubmit)="changePage()">
+        <div>
+          <mat-radio-group aria-label="Select an option" name="selection" ngModel>
+            <mat-radio-button value="1" style="padding-right: 20px;">Template</mat-radio-button>
+            <mat-radio-button value="2" style="padding-right: 20px;">Option 2</mat-radio-button>
+          </mat-radio-group>
+          <button mat-raised-button type="submit" color="primary">Open Page</button>
+        </div>
+      </form>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+<router-outlet></router-outlet>
+
