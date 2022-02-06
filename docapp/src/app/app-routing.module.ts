@@ -14,6 +14,7 @@ import {CustomComponent} from "./basic/directives/custom/custom.component";
 import {FormsComponent} from "./forms/forms.component";
 import {TemplatesComponent} from "./forms/templates/templates.component";
 import {PatchComponent} from "./forms/patch/patch.component";
+import {ValidatorsComponent} from "./forms/validators/validators.component";
 
 const routes: Routes = [
   {path: "", component: EmptyPageComponent, pathMatch: "full"},
@@ -36,7 +37,8 @@ const routes: Routes = [
       {path: "patch", component: PatchComponent},
       {path: "other", component: EmptyPageComponent}
     ]
-  }
+  },
+  {path: "forms-validators", component: ValidatorsComponent},
 ];
 
 @NgModule({

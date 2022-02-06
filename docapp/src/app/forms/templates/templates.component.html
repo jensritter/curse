@@ -1,9 +1,10 @@
 <mat-card>
   <mat-card-title>Template-Based</mat-card-title>
   <mat-card-content>
-    Man kann im Template die Input-Felder gruppieren, in dem beliebige HTML-Elemente mit "ngModelGroup" und einem Namen austatttet.
+    <p>Man kann im Template die Input-Felder gruppieren, in dem beliebige HTML-Elemente mit "ngModelGroup" und einem Namen austatttet.</p>
+    <p>Zugriff auf diese Gruppen im Template bekommt man mit Referenz auf #userModel="ngModelGroup".</p>
+    <p>Zugriff auf nur ein Input-Feld Model bekommt man mit Referenz auf #inputField="ngModel"</p>
 
-    Zugriff auf diese Gruppen kann man dann
   </mat-card-content>
 </mat-card>
 
@@ -15,7 +16,8 @@
     <div *ngIf="userModel.invalid && userModel.touched">Invalid User-Group</div>
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput name="surname" ngModel required>
+      <input matInput name="surname" ngModel required #surname="ngModel">
+      <span *ngIf="surname.invalid && surname.touched">Invalid User Field</span>
     </mat-form-field>
 
     <mat-form-field>

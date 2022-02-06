@@ -33,6 +33,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {PatchComponent} from './forms/patch/patch.component';
+import {ValidatorsComponent} from './forms/validators/validators.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import {PatchComponent} from './forms/patch/patch.component';
     FormsComponent,
     TemplatesComponent,
     PatchComponent,
+    ValidatorsComponent,
   ],
   imports: [
     BrowserModule,
